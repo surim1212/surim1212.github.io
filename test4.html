@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>모던 쇼핑몰</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+      .hero-section {
+        background-color: #f8f9fa;
+        padding: 100px 0;
+        margin-bottom: 40px;
+      }
+      .product-category {
+        margin-bottom: 60px;
+      }
+      .category-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 30px;
+      }
+      .category-title:after {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 3px;
+        background-color: #0d6efd;
+        bottom: -10px;
+        left: 0;
+      }
+      .feature-icon {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e9ecef;
+        margin-bottom: 20px;
+      }
+      .product-item {
+        transition: transform 0.3s;
+      }
+      .product-item:hover {
+        transform: translateY(-10px);
+      }
+      .footer {
+        background-color: #212529;
+        color: white;
+        padding: 60px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 네비게이션 바 - 라이트 테마 사용 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0d6efd" class="bi bi-shop" viewBox="0 0 16 16">
+            <path d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z"/>
+          </svg>
+          ModernShop
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">홈</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">베스트</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">신상품</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">특가</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">이벤트</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center">
+            <a href="#" class="btn btn-outline-primary me-2">로그인</a>
+            <a href="#" class="btn btn-primary">회원가입</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+    <!-- 히어로 섹션 - 캐러셀 대신 큰 배너 사용 -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-4">봄맞이 특별 할인</h1>
+            <p class="lead mb-4">새로운 시즌, 새로운 스타일로 나만의 매력을 표현해보세요. 지금 구매하시면 30% 할인!</p>
+            <div class="d-grid gap-2 d-md-flex">
+              <a href="#" class="btn btn-primary btn-lg px-4">지금 쇼핑하기</a>
+              <a href="#" class="btn btn-outline-secondary btn-lg px-4">자세히 보기</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img src="/api/placeholder/600/400" alt="봄 시즌 컬렉션" class="img-fluid rounded shadow">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 특징 섹션 - 아이콘 포함 -->
+    <div class="container mb-5">
+      <div class="row g-4 py-4">
+        <div class="col-md-4 text-center">
+          <div class="feature-icon mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0d6efd" class="bi bi-truck" viewBox="0 0 16 16">
+              <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 1 1 1 1.732V6.85l-1.481-1.85A.5.5 0 0 0 11.02 5H12v5zm-8 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm8 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            </svg>
+          </div>
+          <h3 class="fs-5 fw-bold">무료 배송</h3>
+          <p class="text-muted">5만원 이상 구매 시 전국 어디든 무료 배송해드립니다.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-icon mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0d6efd" class="bi bi-shield-check" viewBox="0 0 16 16">
+              <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
+              <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7 8.293l3.146-3.147a.5.5 0 0 1 .708 0z"/>
+            </svg>
+          </div>
+          <h3 class="fs-5 fw-bold">품질 보증</h3>
+          <p class="text-muted">모든 제품은 엄격한 품질 검사를 거쳐 최상의 상태로 배송됩니다.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-icon mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#0d6efd" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+              <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+              <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+            </svg>
+          </div>
+          <h3 class="fs-5 fw-bold">쉬운 교환/환불</h3>
+          <p class="text-muted">7일 이내 제품에 문제가 있을 경우 무상으로 교환해드립니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 탭 메뉴로 상품 카테고리 구분 -->
+    <div class="container product-category">
+      <h2 class="category-title fw-bold mb-4">베스트 컬렉션</h2>
+      
+      <ul class="nav nav-pills mb-4" id="productTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="women-tab" data-bs-toggle="tab" data-bs-target="#women" type="button" role="tab">여성</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="men-tab" data-bs-toggle="tab" data-bs-target="#men" type="button" role="tab">남성</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="accessories-tab" data-bs-toggle="tab" data-bs-target="#accessories" type="button" role="tab">액세서리</button>
+        </li>
+      </ul>
+      
+      <div class="tab-content" id="productTabsContent">
+        <div class="tab-pane fade show active" id="women" role="tabpanel">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <div class="position-relative">
+                  <img src="/api/placeholder/300/300" class="card-img-top" alt="여성 상품">
+                  <span class="position-absolute top-0 end-0 badge bg-danger m-2">NEW</span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">플라워 패턴 원피스</h5>
+                  <p class="card-text text-muted">봄에 어울리는 화사한 꽃무늬 원피스</p>
+                  <p class="fw-bold text-primary mb-0">58,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <img src="/api/placeholder/300/300" class="card-img-top" alt="여성 상품">
+                <div class="card-body">
+                  <h5 class="card-title">린넨 블라우스</h5>
+                  <p class="card-text text-muted">가볍고 시원한 여름용 린넨 블라우스</p>
+                  <p class="fw-bold text-primary mb-0">42,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <div class="position-relative">
+                  <img src="/api/placeholder/300/300" class="card-img-top" alt="여성 상품">
+                  <span class="position-absolute top-0 end-0 badge bg-warning m-2">BEST</span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">와이드 데님 팬츠</h5>
+                  <p class="card-text text-muted">편안한 착용감의 와이드 핏 데님</p>
+                  <p class="fw-bold text-primary mb-0">63,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <img src="/api/placeholder/300/300" class="card-img-top" alt="여성 상품">
+                <div class="card-body">
+                  <h5 class="card-title">오버사이즈 니트</h5>
+                  <p class="card-text text-muted">가볍고 포근한 촉감의 오버사이즈 니트</p>
+                  <p class="fw-bold text-primary mb-0">49,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="men" role="tabpanel">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <img src="/api/placeholder/300/300" class="card-img-top" alt="남성 상품">
+                <div class="card-body">
+                  <h5 class="card-title">슬림핏 셔츠</h5>
+                  <p class="card-text text-muted">깔끔한 실루엣의 슬림핏 셔츠</p>
+                  <p class="fw-bold text-primary mb-0">45,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <div class="position-relative">
+                  <img src="/api/placeholder/300/300" class="card-img-top" alt="남성 상품">
+                  <span class="position-absolute top-0 end-0 badge bg-warning m-2">BEST</span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">릴렉스핏 치노팬츠</h5>
+                  <p class="card-text text-muted">편안한 착용감의 면 소재 치노팬츠</p>
+                  <p class="fw-bold text-primary mb-0">52,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <img src="/api/placeholder/300/300" class="card-img-top" alt="남성 상품">
+                <div class="card-body">
+                  <h5 class="card-title">캔버스 스니커즈</h5>
+                  <p class="card-text text-muted">클래식한 디자인의 캔버스 스니커즈</p>
+                  <p class="fw-bold text-primary mb-0">68,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <div class="position-relative">
+                  <img src="/api/placeholder/300/300" class="card-img-top" alt="남성 상품">
+                  <span class="position-absolute top-0 end-0 badge bg-danger m-2">NEW</span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">그래픽 티셔츠</h5>
+                  <p class="card-text text-muted">유니크한 그래픽이 돋보이는 면 티셔츠</p>
+                  <p class="fw-bold text-primary mb-0">32,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="accessories" role="tabpanel">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <img src="/api/placeholder/300/300" class="card-img-top" alt="액세서리">
+                <div class="card-body">
+                  <h5 class="card-title">토트백</h5>
+                  <p class="card-text text-muted">일상에서 실용적으로 사용할 수 있는 토트백</p>
+                  <p class="fw-bold text-primary mb-0">78,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <div class="position-relative">
+                  <img src="/api/placeholder/300/300" class="card-img-top" alt="액세서리">
+                  <span class="position-absolute top-0 end-0 badge bg-warning m-2">BEST</span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">가죽 벨트</h5>
+                  <p class="card-text text-muted">고급스러운 소가죽 소재의 클래식 벨트</p>
+                  <p class="fw-bold text-primary mb-0">38,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <img src="/api/placeholder/300/300" class="card-img-top" alt="액세서리">
+                <div class="card-body">
+                  <h5 class="card-title">실크 스카프</h5>
+                  <p class="card-text text-muted">다양한 스타일링이 가능한 실크 스카프</p>
+                  <p class="fw-bold text-primary mb-0">29,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 border-0 shadow-sm product-item">
+                <div class="position-relative">
+                  <img src="/api/placeholder/300/300" class="card-img-top" alt="액세서리">
+                  <span class="position-absolute top-0 end-0 badge bg-danger m-2">NEW</span>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">선글라스</h5>
+                  <p class="card-text text-muted">트렌디한 디자인의 UV 차단 선글라스</p>
+                  <p class="fw-bold text-primary mb-0">42,000원</p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                  <button class="btn btn-outline-primary w-100">장바구니 담기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 프로모션 배너 섹션 -->
+    <div class="container-fluid bg-light py-5 mb-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <h2 class="fw-bold mb-3">지금 멤버십 가입하고 특별 혜택 받으세요!</h2>
+            <p class="lead mb-4">멤버십 회원에게는 신상품 10% 할인, 무료 배송, 회원 전용 이벤트 등 다양한 혜택을 제공합니다.</p>
+            <button class="btn btn-primary btn-lg">멤버십 가입하기</button>
+          </div>
+          <div class="col-md-6 text-center">
+            <img src="/api/placeholder/500/300" alt="멤버십 혜택" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 신상품 섹션 - 아코디언 활용 -->
+    <div class="container product-category">
+      <h2 class="category-title fw-bold mb-4">신상품 소개</h2>
+      
+      <div class="accordion" id="newProductsAccordion">
+        <div class="accordion-item border-0 mb-3 shadow-sm">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              <strong>4월 신상품 컬렉션</strong>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#newProductsAccordion">
+            <div class="accordion-body">
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                  <div class="card h-100 border-0 shadow-sm product-item">
+                    <div class="row g-0">
+                      <div class="col-4">
+                        <img src="/api/placeholder/200/200" class="img-fluid rounded-start h-100" alt="신상품">
+                      </div>
+                      <div class="col-8">
+                        <div class="card-body">
+                          <h5 class="card-title">리넨 셔츠 드레스</h5>
+                          <p class="card-text">여름에 시원하게 입을 수 있는 리넨 소재 셔츠 드레스

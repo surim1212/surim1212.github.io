@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김수림의 포트폴리오</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #f8f9fa;
+            --dark-color: #333;
+            --light-color: #fff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            color: var(--light-color);
+            padding: 80px 0;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--light-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .card {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .social-card {
+            margin-bottom: 20px;
+        }
+        
+        .social-preview img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-text {
+            flex: 1;
+        }
+        
+        .mbti-badge {
+            background-color: #ffd166;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container text-center">
+            <img src="surim.jpg" alt="" class="profile-img mb-4">
+            <h1 class="display-4 fw-bold">김수림</h1>
+            <div class="mbti-badge">ENFJ</div>
+            <p class="lead mt-3">"방가방가"</p>
+        </div>
+    </header>
+
+    <!-- SNS Section -->
+    <section class="section bg-white">
+        <div class="container">
+            <h2 class="section-title">SNS</h2>
+            <div class="row">
+                <!-- 블로그 -->
+                <div class="col-md-6">
+                    <div class="card social-card">
+                        <div class="social-preview">
+                    
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">네이버 블로그</h5>
+                            <p class="card-text">일상과 관심사를 기록하는 나만의 공간입니다.</p>
+                            <a href="https://blog.naver.com/rimitlleess" target="_blank" class="btn btn-outline-primary">
+                                <i class="fas fa-blog me-2"></i>블로그 방문하기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 인스타그램 -->
+                <div class="col-md-6">
+                    <div class="card social-card">
+                        <div class="social-preview">
+            
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">인스타그램</h5>
+                            <p class="card-text">사진과 순간들로 채워가는 나의 이야기입니다.</p>
+                            <a href="https://www.instagram.com/rimitlleess/" target="_blank" class="btn btn-outline-primary">
+                                <i class="fab fa-instagram me-2"></i>인스타그램 보기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">연락처</h2>
+            <div class="card">
+                <div class="card-body">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h5 class="mb-0">이메일</h5>
+                            <p class="mb-0">surim1212@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h5 class="mb-0">전화번호</h5>
+                            <p class="mb-0">010-2995-6126</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h5 class="mb-0">GitHub</h5>
+                            <p class="mb-0">
+                                <a href="https://github.com/surim1212" target="_blank" class="text-decoration-none">
+                                    github.com/surim1212
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white text-center">
+        <div class="container">
+            <p class="mb-0">© 2025 김수림의 포트폴리오</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
